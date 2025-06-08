@@ -2,17 +2,15 @@ import Jolt from "jolt-physics";
 
 export const jolt = await Jolt();
 
+const LAYER_MOVING = 1;
+const NUM_OBJECT_LAYERS = 1;
+
 const settings = new jolt.JoltSettings();
 setupCollisionFiltering(settings);
 const joltInterface = new jolt.JoltInterface(settings);
 jolt.destroy(settings);
 
-export default joltInterface;
-
-const LAYER_MOVING = 1;
-const NUM_OBJECT_LAYERS = 1;
-
-const createAndAddBody = () => {
+export const createAndAddBody = () => {
   const shape = new jolt.SphereShape(1);
 
   const creationSettings = new jolt.BodyCreationSettings(
@@ -30,8 +28,6 @@ const createAndAddBody = () => {
 
   return id;
 };
-
-createAndAddBody();
 
 function setupCollisionFiltering(settings: Jolt.JoltSettings) {
   const objectFilter = new jolt.ObjectLayerPairFilterTable(NUM_OBJECT_LAYERS);
