@@ -31,6 +31,7 @@ const executeTest = () => {
   const id2 = createAndAddBody();
   console.log("id2", id2.GetIndex());
 
+  //id 1 changed, it is now the same as id2
   console.log("id1", id.GetIndex());
 };
 
