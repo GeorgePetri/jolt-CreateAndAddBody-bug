@@ -26,10 +26,12 @@ setupCounter(document.querySelector<HTMLButtonElement>("#counter")!);
 
 const executeTest = () => {
   const id = createAndAddBody();
-  console.log(id.GetIndex());
+  console.log("id1", id.GetIndex());
 
   const id2 = createAndAddBody();
-  console.log(id2.GetIndex());
+  console.log("id2", id2.GetIndex());
+
+  console.log("id1", id.GetIndex());
 };
 
 executeTest();
